@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button menu="first" class="m">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>commande</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-label color="warning">liste commande</ion-label>
+    <ion-list *ngFor="let cmd of commande">
+      <ion-item button detail color="yellow" >
+        <ion-label>
+          <h2>{{cmd.numero}}</h2>
+          <ion-label>{{cmd.date | date:'dd/MM/YYYY'}}</ion-label>
+          <ion-label>{{cmd.montant}}f</ion-label>
+          <ion-label color="warning">{{cmd.etat}}</ion-label>
+          <ion-label></ion-label>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>

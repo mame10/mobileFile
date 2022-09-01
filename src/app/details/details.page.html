@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button menu="first" class="m">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ng-container *ngIf="produi!=undefined">
+  <ion-content>
+   
+      <ion-icon name="play-skip-back-outline" routerLink="/home"></ion-icon>
+    <!-- <ion-icon name="play-skip-back-outline"></ion-icon> -->
+    <ion-card>
+      <img class="card-img-top" src="data:image/PNG;base64,{{produi?.produit.image}}">
+      <ion-item>
+        <ion-label>reflect-metadata : Une bibliothèque Polyfill
+          pour l'API Metadata Reflection
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{produi.produit.nom}}</ion-label>
+        <ion-label>{{produi.produit.prix}}</ion-label>
+      </ion-item>
+    </ion-card>
+
+  </ion-content>
+</ng-container>

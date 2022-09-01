@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+    <form class="m-5" name="form" #m10="ngForm" (ngSubmit)="m10.form.valid && onSubmitForm()">
+      <ion-item lines="full">
+        <ion-input type="email" id="username" class="form-control form-control-lg " placeholder="login"
+          style="height: 4rem;" name="username" [(ngModel)]="forms.username" #username="ngModel" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-input type="password" id="password" class="form-control form-control-lg" name="password"
+          placeholder="password" [(ngModel)]="forms.password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+        <ion-button type="submit" color="warning" expand="block">connexion</ion-button>
+      <ion-label>Password forget?</ion-label>
+    </form>
+
+  </ion-card-content>
+</ion-content>

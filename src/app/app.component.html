@@ -1,0 +1,33 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar class="nav" color="warning">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="warning">
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/commande" *ngIf="isConnect" color="warning">Mes commandes</ion-item>
+          <ion-item routerLink="/connexion" *ngIf="!isConnect" color="warning">Connexion</ion-item>
+          <ion-item routerLink="/home" color="warning">Catalogue</ion-item>
+          <ion-item routerLink="" color="warning">Panier</ion-item>
+          <ion-item color="warning" (click)="deconnexion()" style="cursor:pointer;" *ngIf="isConnect">Deconnexion
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main">
+  </ion-router-outlet>
+  <ion-tabs>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-icon name="home" color="warning" style="font-size: 180%;" routerLink="/home"></ion-icon>
+        <ion-icon name="basket" color="warning" style="font-size: 200%;"></ion-icon>
+        <ion-icon name="cart" color="warning" style="font-size: 200%;" routerLink="/commande" *ngIf="isConnect">
+        </ion-icon>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-tabs>
+</ion-app>
